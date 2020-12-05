@@ -24,3 +24,54 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+// Set the background color of the app
+ion-content, ion-toolbar{
+    --ion-background-color: #45646E;
+    --background: #45646E;
+}
+
+#title {
+    text-align: center;
+    font-size: 10vw;
+    color: #97dbf0
+}
+
+.container {
+    
+    margin-top: 40%;
+
+    ion-button {
+
+        margin: 10% auto;
+        width: 80%;
+        --background: #4FC8EE;
+        font-size: 5vw;
+        color: black;
+    }
+}
+
+.info {
+
+    font-size: 5vw;
+}
+
+#goBackButton {
+
+    padding: 0;
+    margin: 0;
+    font-size: 5vw;
+    color: #4FC8EE;
+}
+
+.addFlash {
+
+    background-color: #97dbf0;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10%;
+    text-indent: 5%;
+    font-size: 5vw;
+}

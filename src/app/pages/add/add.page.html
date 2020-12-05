@@ -1,0 +1,26 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons  slot="start">
+      <ion-button id="goBackButton" (click)="goBack()">Go back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container" style="margin-top: 20%;">
+    <ion-input class="addFlash"
+      placeholder="Orginal Word"
+      clearInput
+      [(ngModel)]="flash.ogWord"></ion-input>
+    <ion-input class="addFlash"
+      placeholder="Meaning"
+      clearInput
+      [(ngModel)]="flash.trWord"></ion-input>
+    <ion-input class="addFlash"
+      placeholder="Pronunciation (optional)"
+      clearInput
+      [(ngModel)]="flash.prWord"></ion-input>
+
+    <ion-button (click)="saveFlashcard()" expand="block" style="margin-top: 30%;">Save Flashcard</ion-button>
+  </div>
+</ion-content>

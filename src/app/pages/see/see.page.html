@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons  slot="start">
+      <ion-button id="goBackButton" (click)="goBack()">Go back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-list>
+      <ion-item *ngFor="let f of flashService.getFlashcards()">
+        <ion-label>{{f.ogWord}}</ion-label>
+      <ion-button (click)="presentInfo(f.ogWord, f.trWord, f.prWord)">
+        <ion-icon name="information-circle"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goEdit(f.id)">
+        <ion-icon name="pencil"></ion-icon>
+      </ion-button>
+      <ion-button (click)="presentConfirm(f.ogWord, f.id)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+      </ion-item>
+    </ion-list>
+</ion-content>
