@@ -23,7 +23,6 @@ export class FlashcardsService {
    * Get all the flashcards
    */
   public getFlashcards(): Flashcard[] {
-    console.log(this.flashcards);
     return this.flashcards;
   }
 
@@ -47,7 +46,6 @@ export class FlashcardsService {
        rand = Math.floor(Math.random()*this.flashcards.length);
       } while (this.flashcards[rand].id === id);
     }
-    console.log(rand);
     return this.flashcards[rand];
   }
 
@@ -61,12 +59,13 @@ export class FlashcardsService {
     if(flashcard.id == undefined) {
       flashcard.id = this.lastId++;
       this.flashcards.push(flashcard);
+      this.storeFlashCounter(this.lastId);
+      this.storeFlashcards();
     } else {
       this.deleteFlashcard(flashcard.id);
       this.flashcards.push(flashcard);
+      this.storeFlashcards();
     }
-    this.storeFlashcards();
-    this.storeFlashCounter(this.lastId);
   }
 
   /**
@@ -76,7 +75,14 @@ export class FlashcardsService {
    */
   public deleteFlashcard(id: number){
     this.flashcards = this.flashcards.filter(t => t.id != id);
+    if(this.flashcards.length == 0) {
+      
+      this.lastId = 0;
+      this.storeFlashCounter(this.lastId);
+    }
+    
     this.storeFlashcards();
+    
   }
 
   // Local Storage functions
@@ -86,10 +92,13 @@ export class FlashcardsService {
       key: 'flashCounter',
       value: tc.toString()
     });
+    console.log("zapto");
   }
   async readFlashCounter(){
     const {value} = await Storage.get({key: 'flashCounter'});
     this.lastId = Number.parseInt(value);
+    if (this.lastId == NaN) this.lastId = 0;
+    
   }
 
   async storeFlashcards(){
