@@ -20,7 +20,6 @@ export class SeePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.flashcards = this.flashService.getFlashcards();
   }
 
   goBack() {
@@ -88,6 +87,5 @@ export class SeePage implements OnInit {
    */
   goDeleteFlashcard(id: number){
     this.flashService.deleteFlashcard(id);
-    this.flashcards = this.flashService.getFlashcards();
   }
 }

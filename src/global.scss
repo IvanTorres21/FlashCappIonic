@@ -41,7 +41,6 @@ ion-content, ion-toolbar{
 .container {
     
     margin-top: 40%;
-
     ion-button {
 
         margin: 10% auto;
@@ -49,7 +48,7 @@ ion-content, ion-toolbar{
         --background: #4FC8EE;
         font-size: 5vw;
         color: black;
-    }
+}
 }
 
 .info {
@@ -74,4 +73,14 @@ ion-content, ion-toolbar{
     margin-bottom: 10%;
     text-indent: 5%;
     font-size: 5vw;
+}
+#wordButton {
+
+    margin: 10% 10%;
+    width: 80%; 
+    height: 50%;
+    --border-radius: 50px;
+    --background: #4FC8EE;
+    text-align: center;
+    font-size: 10vw;
 }

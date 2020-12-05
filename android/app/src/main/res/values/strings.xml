@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">FlashCapp</string>
+    <string name="title_activity_main">FlashCapp</string>
+    <string name="package_name">io.ionic.flashcapp</string>
+    <string name="custom_url_scheme">io.ionic.flashcapp</string>
+</resources>

@@ -10,7 +10,7 @@ import { FlashcardsService } from 'src/app/services/flashcards.service';
 })
 export class AddPage implements OnInit {
 
-  flash: Flashcard = {ogWord:"", trWord:""};
+  flash: Flashcard = {ogWord:"", trWord:"", prWord:""};
 
   constructor(
     private flashService: FlashcardsService,
@@ -22,7 +22,7 @@ export class AddPage implements OnInit {
 
     // Check if we are editing an old flashcard or adding a new one
     const id = this.activatedRoute.snapshot.paramMap.get("id");
-    if (id != undefined){
+    if (id != undefined && Number.parseInt(id) < this.flashService.getFlashcards().length){
       this.flash.id = this.flashService.getFlashcard(Number.parseInt(id)).id;
       this.flash.ogWord = this.flashService.getFlashcard(Number.parseInt(id)).ogWord;
       this.flash.trWord = this.flashService.getFlashcard(Number.parseInt(id)).trWord;
@@ -31,9 +31,11 @@ export class AddPage implements OnInit {
   }
 
   saveFlashcard(){
+    const actId = this.flash.id;
     this.flashService.saveFlashcard(this.flash);
-    if (this.flash.id == undefined) this.router.navigateByUrl("/");
+    if (actId == undefined) this.router.navigateByUrl("/");
     else this.router.navigateByUrl("see")
+    
   }
   goBack() {
     this.router.navigateByUrl("/");
