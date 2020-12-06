@@ -17,7 +17,9 @@
  </div>
  <h4 align="center">Manage your flashcards</h3>
  <!-- Add image or gif-->
-
+<div align="center">
+  <img src="seegif.gif" alt="see flashcard gif">
+ </div>
  <h4 align="center">Study them!</h3>
  <!-- Add image or gif-->
  <div align="center">
