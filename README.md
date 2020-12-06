@@ -2,9 +2,11 @@
  <p align="center"><b>An application to store and study language flashcards</b></p>
  <br>
 <h1>Content</h1>
-* [What can you do](#uses)
-* [Installation](#insta)
-* [Made With](#made)
+<ul>
+ <li><a href="#users">What can you do<a/></li>
+ <li><a href="#insta">Installation<a/></li>
+ <li><a href="#made">Made With<a/></li>
+</ul>
 <br>
  <h2 id="uses"><b>What can you do?</b></h2>
  <p>Here are all the uses of FlashCapp.
