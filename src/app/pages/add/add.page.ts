@@ -22,11 +22,12 @@ export class AddPage implements OnInit {
 
     // Check if we are editing an old flashcard or adding a new one
     const id = this.activatedRoute.snapshot.paramMap.get("id");
-    if (id != undefined && Number.parseInt(id) < this.flashService.getFlashcards().length){
+    if (id != undefined && Number.parseInt(id)){
       this.flash.id = this.flashService.getFlashcard(Number.parseInt(id)).id;
       this.flash.ogWord = this.flashService.getFlashcard(Number.parseInt(id)).ogWord;
       this.flash.trWord = this.flashService.getFlashcard(Number.parseInt(id)).trWord;
       this.flash.prWord = this.flashService.getFlashcard(Number.parseInt(id)).prWord;
+
     }
   }
 
