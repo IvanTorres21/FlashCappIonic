@@ -12,13 +12,17 @@
  <p>Here are all the uses of FlashCapp.
  <h4 align="center">Add a Flashcard</h3>
  <!-- Add image or gif-->
-  <img align="center" src="addgif.gif" alt="add flashcard gif">
+ <div align="center">
+  <img src="addgif.gif" alt="add flashcard gif">
+ </div>
  <h4 align="center">Manage your flashcards</h3>
  <!-- Add image or gif-->
 
  <h4 align="center">Study them!</h3>
  <!-- Add image or gif-->
-  <img align="center" src="studygif.gif" alt="study flashcard gif">
+ <div align="center">
+  <img src="studygif.gif" alt="study flashcard gif">
+ </div>
  <br>
  <h2 id="insta">Installation</h2>
  <p>If you want to use this app download <a href="https://drive.google.com/file/d/15MOw9_PzZG449EOjEy4NzaN5GAsxMAY1/view?usp=sharing">the apk</a> in your phone and open it to install the app.</p>
