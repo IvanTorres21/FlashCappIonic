@@ -11,19 +11,19 @@
  <h2 id="uses"><b>What can you do?</b></h2>
  <p>Here are all the uses of FlashCapp.
  <h3 align="center">Add a Flashcard</h3>
- <p>Add a new word to the app, place the word in the language you are studying in the Original Word field; The translation of the word in the meaning and if it has a pronunciation place it in the pronunciation field</p>
+ <p align="center">Add a new word to the app, place the word in the language you are studying in the Original Word field; The translation of the word in the meaning and if it has a pronunciation place it in the pronunciation field</p>
  <!-- Add image or gif-->
  <div align="center">
   <img width="250px" src="addgif.gif" alt="add flashcard gif">
  </div>
  <h3 align="center">Manage your flashcards</h3>
- <p>See all your already created flashcards, edit them, and delete them.</p>
+ <p align="center">See all your already created flashcards, edit them, and delete them.</p>
  <!-- Add image or gif-->
 <div align="center">
   <img width="250px" src="seegif.gif" alt="see flashcard gif">
  </div>
  <h3 align="center">Study them!</h3>
- <p>Get random flashcards from your list and practise them.</p>
+ <p align="center">Get random flashcards from your list and practise them.</p>
  <!-- Add image or gif-->
  <div align="center">
   <img width="250px" src="studygif.gif" alt="study flashcard gif">
