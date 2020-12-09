@@ -23,7 +23,7 @@
   <img width="250px" src="seegif.gif" alt="see flashcard gif">
  </div>
  <h3 align="center">Study them!</h3>
- <p align="center">Get random flashcards from your list and practise them.</p>
+ <p align="center">Get random flashcards from your list and practise them.<br>Tap on the card to get the meaning and pronunciation.</p>
  <!-- Add image or gif-->
  <div align="center">
   <img width="250px" src="studygif.gif" alt="study flashcard gif">
