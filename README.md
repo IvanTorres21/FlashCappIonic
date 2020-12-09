@@ -14,19 +14,19 @@
  <p>Add a new word to the app, place the word in the language you are studying in the Original Word field; The translation of the word in the meaning and if it has a pronunciation place it in the pronunciation field</p>
  <!-- Add image or gif-->
  <div align="center">
-  <img width="100px" src="addgif.gif" alt="add flashcard gif">
+  <img width="250px" src="addgif.gif" alt="add flashcard gif">
  </div>
  <h3 align="center">Manage your flashcards</h3>
  <p>See all your already created flashcards, edit them, and delete them.</p>
  <!-- Add image or gif-->
 <div align="center">
-  <img src="seegif.gif" alt="see flashcard gif">
+  <img width="250px" src="seegif.gif" alt="see flashcard gif">
  </div>
  <h3 align="center">Study them!</h3>
  <p>Get random flashcards from your list and practise them.</p>
  <!-- Add image or gif-->
  <div align="center">
-  <img src="studygif.gif" alt="study flashcard gif">
+  <img width="250px" src="studygif.gif" alt="study flashcard gif">
  </div>
  <br>
  <h2 id="insta">Installation</h2>
