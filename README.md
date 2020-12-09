@@ -11,6 +11,7 @@
  <h2 id="uses"><b>What can you do?</b></h2>
  <p>Here are all the uses of FlashCapp.
  <h3 align="center">Add a Flashcard</h3>
+ <p>Add a new word to the app, place the word in the language you are studying in the Original Word field; The translation of the word in the meaning and if it has a pronunciation place it in the pronunciation field</p>
  <!-- Add image or gif-->
  <div align="center">
   <img src="addgif.gif" alt="add flashcard gif">
