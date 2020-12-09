@@ -35,7 +35,7 @@
  <h2 id="made">Made with</h2>
  <p>This application was done with <a href="https://ionicframework.com/">Ionic 4</a>
  <h2 id="now">What now?</h2>
- <p>We will be adding this things to FlashCapp:</p>
+ <p>We will be adding this features to FlashCapp:</p>
  <ul>
  <li>Groups for your flashcards!</li>
  <li>Writing practice!</li>
