@@ -34,7 +34,9 @@
  <br>
  <h2 id="made">Made with</h2>
  <p>This application was done with <a href="https://ionicframework.com/">Ionic 4</a>
- 
-<!-- MARKDOWN LINKS & IMAGES -->
-[add]: https://github.com/IvanTorres21/FlashCappIonic/addgif.gif
-[study]: https://github.com/IvanTorres21/FlashCappIonic/studygif.gif
+ <h2 id="now">What now?</h2>
+ <p>We will be adding this things to FlashCapp:</p>
+ <ul>
+ <li>Groups for your flashcards!</li>
+ <li>Writing practice!</li>
+ </ul>
