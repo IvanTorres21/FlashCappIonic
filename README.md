@@ -39,4 +39,5 @@
  <ul>
  <li>Groups for your flashcards!</li>
  <li>Writing practice!</li>
+ <li>Choose the amount of flashcard you want to study</li>
  </ul>
