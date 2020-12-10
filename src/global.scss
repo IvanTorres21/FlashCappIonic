@@ -92,3 +92,42 @@ ion-content, ion-toolbar{
     color: #97dbf0;
     text-align: center;
 }
+.addGroupButton {
+    padding: 5px;
+    background-color: #4FC8EE;
+    color: #97dbf0;
+    border-radius: 10px;
+
+}
+
+ion-select {
+    margin: 0 auto;
+    font-size: 5vw;
+    border-radius: 10px;
+    background-color: #97dbf0;
+    width: 80%;
+}
+
+.groupT {
+
+    margin: 10px 0;
+    display: block;
+    text-align: center;
+    color: #97dbf0;
+    border-bottom: 1px solid #4FC8EE;
+    font-size: 5vw;
+}
+
+.groupB {
+    width: 50px;
+    height: 30px;
+}
+
+.longButton {
+
+    display: block;
+    margin: 5px auto;
+    width: 80%;
+    --background: #4FC8EE;
+    --border-radius: 10px
+}

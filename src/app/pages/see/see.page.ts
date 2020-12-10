@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Flashcard } from 'src/app/model/flashcard';
 import { FlashcardsService } from 'src/app/services/flashcards.service';
+import { Groupservice } from 'src/app/services/groupservice';
 
 @Component({
   selector: 'app-see',
@@ -11,10 +12,9 @@ import { FlashcardsService } from 'src/app/services/flashcards.service';
 })
 export class SeePage implements OnInit {
 
-  flashcards: Flashcard[] = [];
-
   constructor(
     public flashService: FlashcardsService,
+    public groupService: Groupservice,
     private router: Router,
     private alertCtrl: AlertController
   ) { }
@@ -56,6 +56,20 @@ export class SeePage implements OnInit {
   }
 
   /**
+   * Sends the id of the group to the add-group page to be edited
+   * @param id Id of the group to edit
+   */
+  goEditGroup(id: number){
+    this.router.navigateByUrl(`/add-group${id != undefined ? '/' + id: ''}`);
+  }
+  /**
+   * Sneds the user to the add-group page
+   */
+  goAddGroup(){
+    this.router.navigateByUrl('add-group');
+  }
+
+  /**
    * Asks the user if they really want to delete the flashcard
    */
   async presentConfirm(title: string, id: number){
@@ -82,10 +96,47 @@ export class SeePage implements OnInit {
   }
 
   /**
+   * Asks the user if they really wanna delete the group
+   * @param title Group name
+   * @param id id of the group
+   */
+  async presentConfirmGroup(title: string, id: number){
+    let alert = await this.alertCtrl.create({
+      header: 'Confirm Deletion',
+      message: `Do you want to delete the group "${title}" and all its flashcards?`,
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            this.goDeleteGroup(id);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  /**
    * Sends a request to the flashcard service to delete the flashcard
    * @param id Id of the flashcard to delete
    */
   goDeleteFlashcard(id: number){
     this.flashService.deleteFlashcard(id);
+  }
+
+  /**
+   * Sends a request to the group service to delete the group
+   * @param id Id of the group to delete
+   */
+  goDeleteGroup(id: number){
+    this.groupService.deleteGroup(id);
+    this.flashService.deleteFlashcardsGroup(id);
   }
 }

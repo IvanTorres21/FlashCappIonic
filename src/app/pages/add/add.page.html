@@ -20,7 +20,13 @@
       placeholder="Pronunciation (optional)"
       clearInput
       [(ngModel)]="flash.prWord"></ion-input>
-
+      <ion-select 
+      placeholder="Select group"
+      clearInput
+      [(ngModel)]="groupId">
+        <ion-select-option *ngFor="let o of groupService.getGroups()"
+          value ="{{o.id}}">{{o.name}}</ion-select-option>
+      </ion-select>
     <ion-button (click)="saveFlashcard()" expand="block" style="margin-top: 30%;">Save Flashcard</ion-button>
   </div>
 </ion-content>

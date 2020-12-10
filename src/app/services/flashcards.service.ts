@@ -27,6 +27,13 @@ export class FlashcardsService {
   }
 
   /**
+   * Get the flashcards from a certain group
+   * @param gId Group id
+   */
+  public getGroupFlashcards(gId :number): Flashcard[] {
+    return this.flashcards.filter(f => f.group == gId);
+  }
+  /**
    * Return one flashcard
    * @param id Id of the flashcard to return
    */
@@ -51,12 +58,15 @@ export class FlashcardsService {
 
   /**
    * Function that saves a new flashcard or updates an 
-   * already existing one, it only saves it in memory. 
-   * it still needs to be saved to local storage.
+   * already existing one
    * @param flashcard Flashcard to save or update
    */
   public saveFlashcard(flashcard: Flashcard){
-    if(flashcard.id == undefined) {
+
+    if (flashcard.group == undefined) {
+      flashcard.group = 0;
+    }
+    if(flashcard.id == null) {
       flashcard.id = this.lastId++;
       this.flashcards.push(flashcard);
       this.storeFlashCounter(this.lastId);
@@ -66,11 +76,11 @@ export class FlashcardsService {
       this.flashcards.push(flashcard);
       this.storeFlashcards();
     }
+    console.log(flashcard);
   }
 
   /**
-   * Function that deletes flashcards in memory, still
-   * need to update local storage
+   * Function that deletes flashcards
    * @param id Id of the task to delete
    */
   public deleteFlashcard(id: number){
@@ -81,8 +91,21 @@ export class FlashcardsService {
       this.storeFlashCounter(this.lastId);
     }
     
+    this.storeFlashcards();    
+  }
+
+  /**
+   * Deletes all the flashcards in a group
+   * @param id Id of the group
+   */
+  public deleteFlashcardsGroup(id: number){
+    this.flashcards = this.flashcards.filter(t => t.group != id);
+    if(this.flashcards.length == 0) {
+      
+      this.lastId = 0;
+      this.storeFlashCounter(this.lastId);
+    }
     this.storeFlashcards();
-    
   }
 
   // Local Storage functions
@@ -92,13 +115,11 @@ export class FlashcardsService {
       key: 'flashCounter',
       value: tc.toString()
     });
-    console.log("zapto");
   }
   async readFlashCounter(){
     const {value} = await Storage.get({key: 'flashCounter'});
     this.lastId = Number.parseInt(value);
     if (this.lastId == NaN) this.lastId = 0;
-    
   }
 
   async storeFlashcards(){

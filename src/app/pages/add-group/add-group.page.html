@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>addGroup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container" style="margin-top: 20%;">
+    <ion-input class="addFlash"
+      placeholder="Group name"
+      clearInput
+      [(ngModel)]="group.name"></ion-input>
+
+      <ion-button (click)="saveGroup()" expand="block" style="margin-top: 30%;">Add group</ion-button>
+  </div>
+
+</ion-content>

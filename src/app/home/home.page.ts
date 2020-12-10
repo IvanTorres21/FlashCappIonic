@@ -21,7 +21,7 @@ export class HomePage {
     this.router.navigateByUrl('/see');
   }
   goStudy(){
-    this.router.navigateByUrl('/study');
+    this.router.navigateByUrl('/study-hub');
   }
   async presentInfo() {
     let alert = await this.alertCtrl.create({

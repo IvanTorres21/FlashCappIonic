@@ -20,13 +20,31 @@ const routes: Routes = [
     loadChildren: () => import('./pages/add/add.module').then( m => m.AddPageModule)
   },
   {
-    path: 'study',
+    path: 'study/:id',
     loadChildren: () => import('./pages/study/study.module').then( m => m.StudyPageModule)
   },
   {
     path: 'see',
     loadChildren: () => import('./pages/see/see.module').then( m => m.SeePageModule)
   },
+  {
+    path: 'add-group/:id',
+    loadChildren: () => import('./pages/add-group/add-group.module').then( m => m.AddGroupPageModule)
+  },
+  {
+    path: 'add-group',
+    loadChildren: () => import('./pages/add-group/add-group.module').then( m => m.AddGroupPageModule)
+  },
+  {
+    path: 'select-study-card',
+    loadChildren: () => import('./pages/select-study-card/select-study-card.module').then( m => m.SelectStudyCardPageModule)
+  },
+  {
+    path: 'study-hub',
+    loadChildren: () => import('./pages/study-hub/study-hub.module').then( m => m.StudyHubPageModule)
+  },
+
+
 ];
 
 @NgModule({

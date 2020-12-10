@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons  slot="start">
+      <ion-button id="goBackButton" (click)="goBack()">Go back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-button *ngFor="let g of groupService.getGroups()" 
+                class="longButton"
+                (click)="goStudy(g.id)">{{g.name}}</ion-button>
+  </ion-list>
+</ion-content>

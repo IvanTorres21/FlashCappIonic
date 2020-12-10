@@ -3,22 +3,37 @@
     <ion-buttons  slot="start">
       <ion-button id="goBackButton" (click)="goBack()">Go back</ion-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="addGroupButton" (click)="goAddGroup()">Add Group</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
     <ion-list>
-      <ion-item *ngFor="let f of flashService.getFlashcards()">
-        <ion-label  style="color: white;" class="wordTxt">{{f.ogWord}}</ion-label>
-      <ion-button (click)="presentInfo(f.ogWord, f.trWord, f.prWord)">
-        <ion-icon name="information-circle"></ion-icon>
-      </ion-button>
-      <ion-button (click)="goEdit(f.id)">
-        <ion-icon name="pencil"></ion-icon>
-      </ion-button>
-      <ion-button (click)="presentConfirm(f.ogWord, f.id)">
-        <ion-icon name="trash-outline"></ion-icon>
-      </ion-button>
-      </ion-item>
+      <ion-list *ngFor="let g of groupService.getGroups()">
+        <ion-label class="groupT">{{g.name}}</ion-label>
+        <div style="text-align: center;">
+          <ion-button class="groupB" (click)="goEditGroup(g.id)">
+            <ion-icon name="pencil"></ion-icon>
+          </ion-button>
+          <ion-button *ngIf="g.id != 0" class="groupB" (click)="presentConfirmGroup(g.name, g.id)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+        </div>
+        <ion-item *ngFor="let f of flashService.getGroupFlashcards(g.id)">
+          <ion-label  style="color: white;" class="wordTxt">{{f.ogWord}}</ion-label>
+          <ion-button (click)="presentInfo(f.ogWord, f.trWord, f.prWord)">
+            <ion-icon name="information-circle"></ion-icon>
+          </ion-button>
+          <ion-button (click)="goEdit(f.id)">
+            <ion-icon name="pencil"></ion-icon>
+          </ion-button>
+          <ion-button (click)="presentConfirm(f.ogWord, f.id)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
     </ion-list>
+    
 </ion-content>

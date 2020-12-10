@@ -6,11 +6,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
+<ion-content *ngIf="!finished">
     <ion-button id="wordButton" (click)="showRes()">{{word}}</ion-button>
     <ion-text id="pron" *ngIf="shown">({{flash.prWord}})</ion-text>
-  <div class="container" style="margin-top: 0%;">
-    <ion-button expand="block" class=".addFlash" (click)="getRand()">Next</ion-button>
-  </div>
+    <div class="container" style="margin-top: 0%;">
+      <ion-button expand="block" class=".addFlash" (click)="getRand()">Next</ion-button>
+    </div>
+</ion-content>
+<ion-content *ngIf="finished">
+    <h1 style="color: #97dbf0;">You've finished your flashcards!</h1>
 </ion-content>
