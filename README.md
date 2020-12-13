@@ -30,7 +30,7 @@
  </div>
  <br>
  <h2 id="insta">Installation</h2>
- <p>If you want to use this app download <a href="https://drive.google.com/file/d/15MOw9_PzZG449EOjEy4NzaN5GAsxMAY1/view?usp=sharing">the apk</a> in your phone and open it to install the app.</p>
+ <p>If you want to use this app download the latest <a href="https://github.com/IvanTorres21/FlashCappIonic/releases/tag/2.0">apk</a> in your phone and open it to install the app.</p>
  <br>
  <h2 id="made">Made with</h2>
  <p>This application was done with <a href="https://ionicframework.com/">Ionic 4</a>
