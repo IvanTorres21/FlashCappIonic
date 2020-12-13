@@ -66,7 +66,7 @@ export class FlashcardsService {
     if (flashcard.group == undefined) {
       flashcard.group = 0;
     }
-    if(flashcard.id == null) {
+    if(flashcard.id == null || flashcard.id == undefined) {
       flashcard.id = this.lastId++;
       this.flashcards.push(flashcard);
       this.storeFlashCounter(this.lastId);
@@ -119,7 +119,6 @@ export class FlashcardsService {
   async readFlashCounter(){
     const {value} = await Storage.get({key: 'flashCounter'});
     this.lastId = Number.parseInt(value);
-    if (this.lastId == NaN) this.lastId = 0;
   }
 
   async storeFlashcards(){
@@ -131,5 +130,15 @@ export class FlashcardsService {
   async readFlashcards(){
     const ret = await Storage.get({key: 'flashcards'});
     this.flashcards = JSON.parse(ret.value) ? JSON.parse(ret.value) : [];
+    // If loaded flashcards are empty create welcome flashcard
+    if (this.flashcards.length == 0) {
+      console.log("Entered default group");
+      this.saveFlashcard({id:0, ogWord: "Welcome", trWord:"to", prWord: "FlashCapp", group: 0});
+    }
+    // If we only have the default flashcard reset id to 1
+    if (this.flashcards.length == 1) {
+      this.lastId = 1;
+      this.storeFlashCounter(this.lastId);
+    }
   }
 }
