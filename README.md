@@ -37,7 +37,7 @@
  <h2 id="now">What now?</h2>
  <p>We will be adding this features to FlashCapp:</p>
  <ul>
- <li>Groups for your flashcards!</li>
+ <li>Groups for your flashcards! ✔</li>
  <li>Writing practice!</li>
  <li>Choose the amount of flashcard you want to study</li>
  </ul>
